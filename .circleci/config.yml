@@ -1,0 +1,28 @@
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@4.0.1
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
+
+jobs:
+  test-api:
+    docker:
+      - image: cimg/python:3.10.2
+    steps:
+      - checkout
+      - run:
+          name: Install requirements
+          command: pip install -r api/requirements.txt
+      - run:
+          name: Run tests and collect coverage
+          command: pytest --cov api.calculator
+      - codecov/upload
+
+workflows:
+  version: 2.1
+  build-test:
+    jobs:
+      - test-api
