@@ -26,3 +26,4 @@ jobs:
       uses: codecov/codecov-action@v4.2.0
       with:
         use_oidc: true
+        flags: frontend
