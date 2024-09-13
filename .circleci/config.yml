@@ -17,6 +17,7 @@ jobs:
           command: pytest --cov api.calculator
       - codecov/upload:
           flags: backend
+
   test-frontend:
     docker:
       - image: cimg/node:17.6.0
