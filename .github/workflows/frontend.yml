@@ -1,6 +1,9 @@
 name: Frontend workflow
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'web/**'
 
 permissions:
   id-token: write # This is required for requesting the JWT
