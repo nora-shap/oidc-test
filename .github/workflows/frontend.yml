@@ -23,7 +23,7 @@ jobs:
     - name: Run tests and collect coverage
       run: npm run test
     - name: Upload coverage reports to Codecov with GitHub Action
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@th/fix-oidc
       with:
         use_oidc: true
         flags: frontend
