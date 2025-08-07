@@ -20,7 +20,7 @@ jobs:
     - name: Run tests and collect coverage
       run: pytest --cov
     - name: Upload coverage reports to Codecov with GitHub Action
-      uses: codecov/codecov-action@th/do-not-merge
+      uses: codecov/codecov-action@v5
       with:
         use_oidc: true
         flags: backend
